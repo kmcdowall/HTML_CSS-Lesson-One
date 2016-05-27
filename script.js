@@ -1,18 +1,49 @@
-document.getElementById("foot01").innerHTML = "<p>&copy; " + new Date().getFullYear() + " Kate. </p>";
+var arrayInts = [1, 2, 2, 2, 2, 3, 3, 4];
 
-var date = new Date();
-var day = date.getDay();
-var monthNum = date.getMonth();
-var year = date.getFullYear();
-
-var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-function todayDay() {
+function mean() {
     "use strict";
-    document.log(date + " " + months[monthNum] + " " + year);
+    var total = 0, i = 0, avg;
+    for (i = 0; i < arrayInts.length; i += 1) {
+        total += arrayInts[i];
+    }
+    avg = total / arrayInts.length;
+    window.alert(avg);
 }
 
-function functiontoGoo() {
+function displayDate() {
     "use strict";
-    location.href = 'https://www.google.com';
+    document.getElementById("demo").innerHTML = Date();
+}
+
+function median() {
+    "use strict";
+    arrayInts.sort(function (a, b) {return a - b; });
+    var half = Math.floor(arrayInts.length / 2);
+    
+    if (arrayInts.length % 2 === 0) {
+        window.alert(arrayInts[half - 1]);
+    } else {
+        window.alert(arrayInts[(arrayInts.length - 1) / 2]);
+    }
+}
+
+function mode() {
+    "use strict";
+    if (arrayInts.length === 0) {
+        return null;
+    }
+    arrayInts.sort(function (a, b) {return a - b; });
+    var numTrack = arrayInts[0], i = 1, countOccur = 0, maxOccur = 0, maxOVal;
+    for (i = 1; i < arrayInts.length; i += 1) {
+        if (numTrack === arrayInts[i]) {
+            countOccur += 1;
+        } else if (numTrack !== arrayInts[i]) {
+            numTrack = arrayInts[i];
+            if (countOccur > maxOccur) {
+                maxOccur = countOccur;
+                maxOVal = arrayInts[i];
+            }
+        }
+    }
+    window.alert("mode is " + (maxOVal - 2) + " (it occurs " + maxOccur + " times)");
 }

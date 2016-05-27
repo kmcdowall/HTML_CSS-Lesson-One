@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>fred</title>
+    <title>KITTIES</title>
     <link href = "main.css" rel = "stylesheet">
     </head>
     
@@ -11,19 +11,59 @@
     <script src = "script.js"></script>
 
         <div id = "wrapperDiv">
-            <div id = "headerDiv"><h1 style="font-size:600%;">BOBBY</h1>
+            <div id = "headerDiv"><h1 style="font-size:600%;">math</h1>
             </div>
             
             <div id = "navDiv01">
-                <div class = "buttonDiv"><a href="index.html">Main</a></div>
-                <div class = "buttonDiv"><a href="second.html">second</a></div>
-                <div class = "buttonDiv"><a href="third.html">third</a></div>
-                <div class = "buttonDiv"><a href="fourth.html">fourth</a></div>
-                <div class = "buttonDiv"><a href="about.html">about</a></div>
+                <div class = "buttonDiv"><a href="index.html">Home</a></div>
+                <div class = "buttonDiv"><a href="second.html">Resting</a></div>
+                <div class = "buttonDiv"><a href="third.html">Active</a></div>
+                <div class = "buttonDiv"><a href="fourth.html">More</a></div>
+                <div class = "buttonDiv"><a href="about.html">Math</a></div>
 
             </div>
             
-            <div id = "bodyDiv">
+            <div id = "bodyDiv"> <center>
+                <div id = "dateDiv">
+                    <p><br><br><br>Click the button to display the date.</p>
+                    <button onclick="displayDate()">The time is?</button>
+                    <script>
+                        function displayDate() {
+                        document.getElementById("demo").innerHTML = Date();
+                        }
+                    </script>
+                    <p id="demo"></p>   
+                </div>
+                <div id = "meanDiv">
+                    <p>Click the button to display the mean.</p>
+                    <button onclick="mean()">The mean is?</button>
+                    <script>
+                        function meanFun() {
+                            document.getElementById("mean").innerHTML = mean();
+                        }
+                    </script>
+                <p id="mean"></p>
+                </div>
+                <div id = "medianDiv">
+                    <p>Click the button to display the median.</p>
+                    <button onclick="median()">The median is?</button>
+                    <script>
+                        function medianFun() {
+                            document.getElementById("med").innerHTML = median();
+                        }
+                    </script>
+                    <p id="med"></p>
+                </div>
+                <div id = "modeDiv">
+                    <p>Click the button to display the mode.</p>
+                    <button onclick="mode()">The mode is?</button>
+                    <script>
+                        function modeFun() {
+                            document.getElementById("mode").innerHTML = mode();
+                        }
+                    </script>
+                    <p id="mode"></p>
+                </div> </center>
             </div>
             
             <div id = "footerDiv">
